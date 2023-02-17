@@ -20,6 +20,11 @@ namespace SolidDemo.OCP
     {
       return Math.Round(((BasicSalary / 30) / 8) * hours * 2, 2);
     }
+
+    public override string ToString()
+    {
+      return $"EmployeeId: {ID}, Name: {Name}";
+    }
   }
 
   public class RegularEmployee : IEmployee
@@ -31,6 +36,11 @@ namespace SolidDemo.OCP
     public decimal calHoursBonus(decimal hours)
     {
       return Math.Round(((BasicSalary / 30) / 8) * hours, 2);
+    }
+
+    public override string ToString()
+    {
+      return $"EmployeeId: {ID}, Name: {Name}";
     }
   }
 }
