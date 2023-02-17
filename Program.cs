@@ -12,7 +12,7 @@ namespace SolidDemo.OCP
     {
 
 
-      ManagerEmployee Emp1 = new ManagerEmployee();
+      IEmployee Emp1 = new ManagerEmployee();
       Emp1.ID = "1";
       Emp1.Name = "Hussein";
       Emp1.BasicSalary = 40000;
@@ -21,7 +21,7 @@ namespace SolidDemo.OCP
         + "Bonus:" + Emp1.calHoursBonus(5).ToString()
       );
 
-      RegularEmployee Emp2 = new RegularEmployee();
+      IEmployee Emp2 = new RegularEmployee();
       Emp2.ID = "2";
       Emp2.Name = "Ahmed";
       Emp2.BasicSalary = 40000;
