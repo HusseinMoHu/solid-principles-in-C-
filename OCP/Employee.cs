@@ -39,9 +39,9 @@ namespace OpenClosedPrinciple
     }
   }
 
-  public class Regular : Employee
+  public class RegularEmp : Employee
   {
-    public Regular(string ID, string Name, decimal BasicSalary) : base(ID, Name, BasicSalary)
+    public RegularEmp(string ID, string Name, decimal BasicSalary) : base(ID, Name, BasicSalary)
     {
     }
 
