@@ -8,9 +8,16 @@ namespace OpenClosedPrinciple
 
   public abstract class Employee
   {
-    public string? ID { get; set; }
-    public string? Name { get; set; }
-    public decimal BasicSalary { get; set; }
+    public string ID;
+    public string Name;
+    public decimal BasicSalary;
+
+    public Employee(string ID, string Name, decimal BasicSalary)
+    {
+      this.ID = ID;
+      this.Name = Name;
+      this.BasicSalary = BasicSalary;
+    }
 
     public abstract decimal calHoursBonus(decimal hours);
 
@@ -22,9 +29,25 @@ namespace OpenClosedPrinciple
 
   public class Manager : Employee
   {
+    public Manager(string ID, string Name, decimal BasicSalary) : base(ID, Name, BasicSalary)
+    {
+    }
+
     public override decimal calHoursBonus(decimal hours)
     {
-      return ((BasicSalary / 30) / 8) * hours * 2;
+      return Math.Round(((BasicSalary / 30) / 8) * hours * 2, 2);
+    }
+  }
+
+  public class Regular : Employee
+  {
+    public Regular(string ID, string Name, decimal BasicSalary) : base(ID, Name, BasicSalary)
+    {
+    }
+
+    public override decimal calHoursBonus(decimal hours)
+    {
+      return Math.Round(((BasicSalary / 30) / 8) * hours, 2);
     }
   }
 }
