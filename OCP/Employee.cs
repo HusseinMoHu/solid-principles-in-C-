@@ -1,10 +1,5 @@
 namespace OpenClosedPrinciple
 {
-  public enum EmployeesTypes
-  {
-    Manager,
-    Regular,
-  };
 
   public abstract class Employee
   {
