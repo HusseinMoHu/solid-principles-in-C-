@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 
 
-// Change the namespace based on concept folder namespace
-namespace OpenClosedPrinciple
+// Change the namespace based on concept you are trying to demonstrate (SRP, OCP, LSP, ISP, DIP)
+namespace SolidDemo.OCP
 {
   public class Program
   {
@@ -12,13 +12,19 @@ namespace OpenClosedPrinciple
     {
 
 
-      Manager Emp1 = new Manager("1", "Hussein", 40000);
+      ManagerEmployee Emp1 = new ManagerEmployee();
+      Emp1.ID = "1";
+      Emp1.Name = "Hussein";
+      Emp1.BasicSalary = 40000;
       Console.WriteLine(
         Emp1.ToString() + Environment.NewLine
         + "Bonus:" + Emp1.calHoursBonus(5).ToString()
       );
 
-      RegularEmp Emp2 = new RegularEmp("2", "Ahmed", 40000);
+      RegularEmployee Emp2 = new RegularEmployee();
+      Emp2.ID = "2";
+      Emp2.Name = "Ahmed";
+      Emp2.BasicSalary = 40000;
       Console.WriteLine(
         Emp2.ToString() + Environment.NewLine
         + "Bonus:" + Emp2.calHoursBonus(5).ToString()

@@ -1,6 +1,7 @@
-namespace OpenClosedPrinciple
+namespace SolidDemo.OCP
 {
 
+  // Apply the OCP principle using: abstract class
   public abstract class Employee
   {
     public string ID;
