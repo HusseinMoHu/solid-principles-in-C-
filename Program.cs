@@ -13,7 +13,7 @@ namespace OpenClosedPrinciple
       // EMP1
       var Emp1 = new Manager();
       Emp1.ID = "1";
-      Emp1.Name = "Karim";
+      Emp1.Name = "Hussein";
       Emp1.BasicSalary = 40000;
 
       Console.WriteLine(
