@@ -12,6 +12,6 @@ namespace SolidDemo.ISP
   // When user wants to pay order with multiple payment methods, we can use this interface
   public interface IOrder : ICashOrder, IOnlinePaymentOrder, ICreditOrder
   {
-
+    void MethodBelongsToIOrderOnly();
   }
 }

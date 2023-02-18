@@ -21,5 +21,10 @@ namespace SolidDemo.ISP
     {
       // complete order
     }
+
+    public void MethodBelongsToIOrderOnly()
+    {
+      // method belongs to IOrder only
+    }
   }
 }
