@@ -4,31 +4,38 @@ using System.Linq;
 
 
 // Change the namespace based on concept you are trying to demonstrate (SRP, OCP, LSP, ISP, DIP)
-namespace SolidDemo.OCP
+namespace SolidDemo.LSP
 {
   public class Program
   {
     public static void Main(string[] args)
     {
 
+      PostDatabase db = new PostDatabase();
+      List<string> newPosts = new List<string>();
+      newPosts.Add("original post");
+      newPosts.Add("#tag post");
+      newPosts.Add("@mention post");
 
-      ManagerEmployee Emp1 = new ManagerEmployee();
-      Emp1.ID = "1";
-      Emp1.Name = "Hussein";
-      Emp1.BasicSalary = 40000;
-      Console.WriteLine(
-        Emp1.ToString() + Environment.NewLine
-        + "Bonus:" + Emp1.calHoursBonus(5).ToString()
-      );
+      Post postObj;
+      foreach (var post in newPosts)
+      {
+        if (post.StartsWith("#"))
+        {
+          postObj = new TagPost();
+        }
+        else if (post.StartsWith("@"))
+        {
+          postObj = new MentionPost();
+        }
+        else
+        {
+          postObj = new Post();
+        }
 
-      RegularEmployee Emp2 = new RegularEmployee();
-      Emp2.ID = "2";
-      Emp2.Name = "Ahmed";
-      Emp2.BasicSalary = 40000;
-      Console.WriteLine(
-        Emp2.ToString() + Environment.NewLine
-        + "Bonus:" + Emp2.calHoursBonus(5).ToString()
-      );
+        string result = postObj.CreatePost(db, post);
+        Console.WriteLine(result);
+      }
 
     }
   }
