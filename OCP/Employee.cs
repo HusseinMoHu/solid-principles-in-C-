@@ -1,4 +1,4 @@
-namespace SolidDemo.OCP
+namespace OCP
 {
 
   // Apply the OCP principle using: abstract class

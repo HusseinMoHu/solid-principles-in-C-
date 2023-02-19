@@ -1,4 +1,4 @@
-namespace SolidDemo.ISP
+namespace ISP
 {
   public class Order : IOrder
   {

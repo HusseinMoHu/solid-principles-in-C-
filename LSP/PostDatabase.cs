@@ -1,4 +1,4 @@
-namespace SolidDemo.LSP
+namespace LSP
 {
   public class PostDatabase
   {
