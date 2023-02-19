@@ -1,6 +1,6 @@
 namespace DIP
 {
-  public class Gmail
+  public class Gmail : IMessage
   {
     public string? address { get; set; }
     public string? message { get; set; }
@@ -11,7 +11,7 @@ namespace DIP
     }
   }
 
-  public class HotMail
+  public class HotMail : IMessage
   {
     public string? address { get; set; }
     public string? message { get; set; }

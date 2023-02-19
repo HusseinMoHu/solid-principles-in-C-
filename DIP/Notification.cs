@@ -3,24 +3,19 @@ namespace DIP
   public class Notification
   {
 
-    private Gmail _gmail = new Gmail();
-    private HotMail _hotMail = new HotMail();
+    private readonly IMessage _mailService;
 
-    public string? address { get; set; }
-    public string? message { get; set; }
-
-    public string sendGmail()
+    public Notification(IMessage mailService)
     {
-      _gmail.address = address;
-      _gmail.message = message;
-      return _gmail.Send();
+      // Dependency Injection
+      _mailService = mailService;
     }
 
-    public string sendHotMail()
+
+    public string SendMail()
     {
-      _hotMail.address = address;
-      _hotMail.message = message;
-      return _hotMail.Send();
+      return _mailService?.Send() ?? "No mail service";
     }
+
   }
 }
