@@ -3,13 +3,10 @@
   public static void Main(string[] args)
   {
 
-    DIP.Gmail gmail = new DIP.Gmail() { address = "hussein@gmail.com", message = "Hello World" };
-    DIP.Notification notification1 = new DIP.Notification(gmail);
+    DIP.Notification notification1 = new DIP.Notification(new DIP.Gmail("hussein@gmail.com", "Hello From Gmail"));
     Console.WriteLine(notification1.SendMail());
 
-
-    DIP.HotMail hotMail = new DIP.HotMail() { address = "hussein@hotmail.com", message = "Hello World" };
-    DIP.Notification notification2 = new DIP.Notification(gmail);
+    DIP.Notification notification2 = new DIP.Notification(new DIP.HotMail("hussein@hotmail.com", "Hello From HotMail"));
     Console.WriteLine(notification2.SendMail());
   }
 }
